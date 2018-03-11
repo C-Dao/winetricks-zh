@@ -19084,7 +19084,7 @@ cd "$W_CACHE/$W_PACKAGE"
 
     # Make sure chinese fonts are available
     w_call fakechinese
-    
+
     echo "Setting aliim handler to xdg-open."
     ##################################
     cat > $HOME/.local/share/applications/wine-extension-aliim.desktop <<_EOF_
@@ -19102,12 +19102,12 @@ _EOF_
 
     # Make sure chinese fonts are available
     w_call fakechinese
-    
+
     # Disable auto update
     mkdir -p $WINEPREFIX/drive_c/Program\ Files/AliWangWang/8.60.01C/update
     chmod 000 $WINEPREFIX/drive_c/Program\ Files/AliWangWang/8.60.01C/update
 
-    
+
 w_try "$WINE" "$file1"
 w_declare_exe "$W_PROGRAMS_X86_WIN\\AliWangWang" "AliIM.exe"
 }
@@ -19127,7 +19127,7 @@ w_metadata evernote apps \
 load_evernote()
 {
     w_download https://cdn1.evernote.com/win6/public/Evernote_6.6.4.5512.exe d909f785b407cbd57ed2b04ab8e95d6f993d54432a1303f6792f4e296da11b31
-    
+
     if w_workaround_wine_bug xxx "workaround can not edit bug"
     then
         w_call wininet
@@ -19171,7 +19171,7 @@ w_metadata iqiyi apps\
     media="download" \
     file1="QIYImedia_0_27.exe" \
     installed_exe1="$W_PROGRAMS_X86_WIN/IQIYI Video/LStyle/QyClient.exe" \
-    homepage="http://www.iqiyi.com/" 
+    homepage="http://www.iqiyi.com/"
 
 load_iqiyi()
 {
@@ -19182,7 +19182,7 @@ cd "$W_CACHE/$W_PACKAGE"
     then
         w_call riched20
     fi
-    
+
     if w_workaround_wine_bug XX "Cannot input Chinese, please paste from clipboard."
     then
         w_warn "搜索框无法输入中文，请从其他地方复制。"
@@ -19349,7 +19349,7 @@ load_qqeim()
     then
         w_call winxp
     fi
-    
+
     # Make sure chinese fonts are available
     w_call fakechinese
 
@@ -19442,7 +19442,7 @@ load_qqlight()
     then
         w_override_dlls disabled ntoskrnl.exe
     fi
-    
+
     if w_workaround_wine_bug 37680 "Disable txplatform.exe to fix QQ can't be quit cleanly"
     then
         w_override_dlls disabled txplatform.exe
@@ -19452,7 +19452,7 @@ load_qqlight()
     then
         w_call winxp
     fi
-  
+
     cd "$W_CACHE/$W_PACKAGE"
     w_try "$WINE" "$file1"
     w_declare_exe "$W_PROGRAMS_X86_WIN\\Tencent\\QQ\\Bin" QQScLauncher.exe
@@ -19482,10 +19482,10 @@ cd "$W_CACHE/$W_PACKAGE"
 
     # uses vcrun2010
     w_call vcrun2010
-    
+
     # uses mfc42u.dll
     w_call mfc42
-    
+
     # Make sure chinese fonts are available
     w_call fakechinese
 
@@ -19544,7 +19544,7 @@ load_tim()
 
     # uses mfc42u.dll
     w_call mfc42
-    
+
     if w_workaround_wine_bug 42810 "Setting Windows version as XP to work around launch native browser bug"
     then
         w_call winxp
@@ -19567,11 +19567,11 @@ load_tim()
     then
         w_override_dlls disabled ntoskrnl.exe
     fi
-    
+
     if w_workaround_wine_bug 37680 "Disable txplatform.exe to work around QQ can't be quit cleanly"
     then
         w_override_dlls disabled txplatform.exe
-    fi    
+    fi
 
     cd "$W_CACHE/$W_PACKAGE"
     w_try "$WINE" "$file1"
@@ -19592,20 +19592,20 @@ w_metadata wechat apps \
 
 load_wechat()
 {
-    w_download http://dldir1.qq.com/weixin/Windows/WeChatSetup.exe 0419d618dfb9fef4edbca98be5fb5b5a2e281578d4a158b40ad906455d1e967e
+    w_download http://dldir1.qq.com/weixin/Windows/WeChatSetup.exe 0d786e3ed10104f9bdb6e8e1f579a13de0310c2ccd6f1912b6d88923f4d2ae6f
 
     if w_workaround_wine_bug 38038 "Installing native riched20 to work around typing bug"
     then
         w_call riched20
     fi
-    
+
     if w_workaround_wine_bug 42710 "Installing native ole32 to work around sending files bug"
     then
         w_call ole32
     fi
 
     w_call fakechinese
-    
+
     cd "$W_CACHE/$W_PACKAGE"
     w_try "$WINE" "$file1"
 
@@ -19655,7 +19655,7 @@ cd "$W_CACHE/$W_PACKAGE"
 
     # Make sure chinese fonts are available
     w_call fakechinese
-    
+
 w_try "$WINE" "$file1"
 w_declare_exe "$W_PROGRAMS_X86_WIN\\Youdao\YoudaoNote" "RunYNote.exe"
 }
