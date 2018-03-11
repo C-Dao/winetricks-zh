@@ -19809,12 +19809,12 @@ w_declare_exe "$W_PROGRAMS_X86_WIN\\同花顺" "zdsj.exe"
 w_metadata tim apps \
  title="TIM (Chinese chat app)" \
  publisher="Tencent" \
- year="2017" \
+ year="2018" \
  media="download" \
- file1="TIM2.1.0.exe" \
+ file1="TIM2.1.5.exe" \
  file2="TIM.tar.gz"\
  installed_exe1="$W_PROGRAMS_X86_WIN/Tencent/TIM/Bin/QQScLauncher.exe" \
- homepage="http://www.qq.com" \
+ homepage="https://tim.qq.com" \
  unattended="no"
 
 load_tim()
