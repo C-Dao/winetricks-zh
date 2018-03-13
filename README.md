@@ -14,10 +14,10 @@
 
 ## 目前支持的应用 ##
 
-1.QQ国际版2.11  
+1.QQ国际版
 对应的 verb 文件：qqintl.verb
 
-2.QQ 8.3  
+2.QQ
 对应的 verb 文件：qq.verb
 
 3.同花顺股票软件  
@@ -86,9 +86,12 @@
 24.TIM  
 对应的 verb 文件：tim.verb
 
+25.金山词霸
+对应的 verb 文件：powerword.verb
+
 ## 使用方法 ##
 
-### 已安装有旧版 winetricks ###
+### 已安装 winetricks ###
 
 打开终端进入 verb 文件夹，运行命令： `winetricks --isolate <文件名>` (--isolate 参数起到将应用安装到单独容器中的作用，winetricks-zh 默认将应用安装到单独容器，不需要此参数)
 
