@@ -19948,6 +19948,26 @@ w_try "$WINE" "$file1"
 w_declare_exe "$W_PROGRAMS_X86_WIN\\Youdao\YoudaoNote" "RunYNote.exe"
 }
 
+w_metadata powerword apps\
+    title="PowerWord (金山词霸)" \
+    publisher="Kingsoft" \
+    year="2017" \
+    media="download" \
+    file1="PowerWord.800.12012.exe" \
+    homepage="http://cp.iciba.com/" \
+
+load_powerword()
+{
+    w_download http://download.iciba.com/pc/personal2016/PowerWord.800.12012.exe 3212ec8708fcf6218686c5cac1ab8f5ac9ae1832dae83d4ab5542989955c85c4
+    cd "$W_CACHE/$W_PACKAGE"
+
+    # Make sure chinese fonts are available
+    w_call fakechinese
+
+    w_try "$WINE" "$file1"
+}
+
+
 #----------------------------------------------------------------
 
 # Not really a setting, just a fake verb, that shouldn't count as 'installed',
