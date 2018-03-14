@@ -1,12 +1,12 @@
-w_metadata dingding apps\
-        title="Dingding" \
+w_metadata dingtalk apps\
+        title="Dingtalk" \
         publisher="alibaba" \
         year="2018" \
         media="download" \
         file1="DingTalk_v4.2.8.38.exe" \
         homepage="https://www.dingtalk.com" \
 
- load_dingding()
+ load_dingtalk()
  {
         w_download https://download.alicdn.com/dingtalk-desktop/win_installer/Release/DingTalk_v4.2.8.38.exe 63208813693f02e2e76730b31368802a29a0591566aef3061345511e181721f8
 
@@ -17,4 +17,3 @@ w_metadata dingding apps\
 
         w_try "$WINE" "$file1"
   }
-    

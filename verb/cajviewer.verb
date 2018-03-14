@@ -1,0 +1,19 @@
+ w_metadata cajviewer apps\
+      title="CAJViewer(知网caj阅读器)" \
+      publisher="CNKI" \
+      year="2016" \
+      media="download" \
+      file1="CAJViewer%207.2.self.exe" \
+      homepage="http://www.cnki.net/" \
+      unattended="no"
+
+  load_cajviewer()
+  {
+      w_download http://viewer.d.cnki.net/CAJViewer%207.2.self.exe  6dd362e46fb8cf6e727bdcb236ab09207ec1a23c0722998ddab4f5a3f4b188c2
+      cd "$W_CACHE/$W_PACKAGE"
+
+      # Make sure chinese fonts are available
+      w_call fakechinese
+
+      w_try "$WINE" "$file1"
+  }

@@ -19302,8 +19302,8 @@ load_winxp()
 # Chinese apps addition
 #----------------------------------------------------------------
 
-w_metadata 163mail apps\
-    title="163 MailMaster（网易邮箱大师）" \
+w_metadata neteasemail apps\
+    title="NetEase MailMaster（网易邮箱大师）" \
     publisher="NetEase" \
     year="2017" \
     media="download" \
@@ -19312,7 +19312,7 @@ w_metadata 163mail apps\
     homepage="http://mail.163.com/dashi/?from=mail46" \
     unattended="no"
 
-load_163mail()
+load_neteasemail()
 {
 w_download http://client.dl.126.net/pcmail/dashi/mail.exe 9b010b7c2cf8902453c1c6820aae364690188e5448165eaf605ec0961e5b4667
 cd "$W_CACHE/$W_PACKAGE"
@@ -19326,7 +19326,7 @@ w_declare_exe "$W_PROGRAMS_X86_WIN\\MailMaster" "Start.exe"
 
 #----------------------------------------------------------------
 
-w_metadata 163music apps\
+w_metadata neteasemusic apps\
     title="NetEase Cloud Music" \
     publisher="NetEase" \
     year="2017" \
@@ -19336,7 +19336,7 @@ w_metadata 163music apps\
     homepage="http://music.163.com/" \
     unattended="no"
 
-load_163music()
+load_neteasemusic()
 {
 w_download https://d1.music.126.net/dmusic/cloudmusicsetup_2_2_2_195462.exe 77f87f055f3f6e6620aab2c9ae233372bbf5c5d48f1d39abbd0809182e313c7b
 cd "$W_CACHE/$W_PACKAGE"
@@ -19357,7 +19357,7 @@ w_declare_exe "$W_PROGRAMS_X86_WIN\\Netease\CloudMusic" "cloudmusic.exe"
 
 w_metadata aliww apps\
     title="AliWangWang(阿里旺旺)" \
-    publisher="Taobao.com" \
+    publisher="alibaba" \
     year="2016" \
     media="download" \
     file1="AliIM2016_taobao(8.60.01C).exe" \
@@ -19967,15 +19967,15 @@ load_powerword()
     w_try "$WINE" "$file1"
 }
 
-w_metadata dingding apps\
-        title="Dingding" \
+w_metadata dingtalk apps\
+        title="Dingtalk" \
         publisher="alibaba" \
         year="2018" \
         media="download" \
         file1="DingTalk_v4.2.8.38.exe" \
         homepage="https://www.dingtalk.com" \
 
- load_dingding()
+ load_dingtalk()
  {
         w_download https://download.alicdn.com/dingtalk-desktop/win_installer/Release/DingTalk_v4.2.8.38.exe 63208813693f02e2e76730b31368802a29a0591566aef3061345511e181721f8
 
@@ -19985,6 +19985,26 @@ w_metadata dingding apps\
         w_call fakechinese
 
         w_try "$WINE" "$file1"
+  }
+
+  w_metadata cajviewer apps\
+      title="CAJViewer(知网caj阅读器)" \
+      publisher="CNKI" \
+      year="2016" \
+      media="download" \
+      file1="CAJViewer%207.2.self.exe" \
+      homepage="http://www.cnki.net/" \
+      unattended="no"
+
+  load_cajviewer()
+  {
+      w_download http://viewer.d.cnki.net/CAJViewer%207.2.self.exe  6dd362e46fb8cf6e727bdcb236ab09207ec1a23c0722998ddab4f5a3f4b188c2
+      cd "$W_CACHE/$W_PACKAGE"
+
+      # Make sure chinese fonts are available
+      w_call fakechinese
+
+      w_try "$WINE" "$file1"
   }
 
 #----------------------------------------------------------------
